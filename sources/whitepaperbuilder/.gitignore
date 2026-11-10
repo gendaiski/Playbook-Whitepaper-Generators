@@ -1,0 +1,51 @@
+# Upstream repos are cloned here by scripts/clone_all.sh, not committed
+vendor/
+
+# Per-system environments and outputs
+.venv/
+node_modules/
+dist/
+systems/*/reports/
+systems/*/output/
+systems/*/rag_storage/
+__pycache__/
+*.pyc
+.env
+
+# start.sh state and the Workbench data
+.run/
+systems/rag-anything/data/
+systems/*/.node/
+bench/interactive/*.tmp
+systems/flowise/.npm-global/
+systems/flowise/data/
+systems/flowise/app/
+.tools/
+systems/*/.deploy/
+systems/autogpt/.env
+systems/*/.nginx-ipv4.conf
+systems/*/.tiktoken-cache/
+systems/*/.bundle/
+systems/fabricjs-site/Gemfile.lock
+systems/metagpt/.requirements.txt
+systems/*/.check.json
+systems/opus-videos/.site/
+systems/opus-videos/.remakes/
+systems/metagpt/.extras.txt
+systems/*/.build/
+systems/izwi/.bin/
+systems/izwi/.izwi/
+systems/izwi/.server.log
+systems/continue/.code-server/
+systems/*/.ready
+systems/pocketbase/.bin/
+systems/pocketbase/.pb_data/
+systems/pocketbase/.superuser
+systems/appwrite/.install/
+systems/post-studio/library/
+systems/agents-from-scratch/runtime/
+systems/jakes-brain/runtime/
+
+# WhitePaperBuilder ships its original browser dependencies and fonts offline.
+!systems/whitepaperbuilder/upstream/src/vendor/
+!systems/whitepaperbuilder/upstream/src/vendor/**

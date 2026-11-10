@@ -1,0 +1,397 @@
+{
+  "source_repository": "https://github.com/gendaiski/Sandbox-2",
+  "source_branch": "codex/whitepaperbuilder-install",
+  "source_commit": "8e95b7b798857d5e58a641d9310416441db5c1e5",
+  "destination": "sources/whitepaperbuilder",
+  "selected_paths": [
+    "systems/whitepaperbuilder"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "101c0cd2dc83911266a38fb0722ed86a20e61f8cc53f5b683e70f014b0174cc4",
+      "symlink": null,
+      "bytes": 1228
+    },
+    {
+      "path": "CODEX_HANDOFF.md",
+      "sha256": "e71547a7354f853a6757359875b73d17d9dc1f639f5f7c5c5d0faa82a891845f",
+      "symlink": null,
+      "bytes": 15036
+    },
+    {
+      "path": "README.md",
+      "sha256": "52406e9cf40a3b98b2e6c6dd2f0c66c8692fb4ceb9ecf953a5dc6e63db3fca6f",
+      "symlink": null,
+      "bytes": 8001
+    },
+    {
+      "path": "systems/whitepaperbuilder/Open-Windows.cmd",
+      "sha256": "196d374c2ef4062e06679a818aad873e8259f7d80bbebecaaf6b1a520e840f5a",
+      "symlink": null,
+      "bytes": 46
+    },
+    {
+      "path": "systems/whitepaperbuilder/Open-macOS.command",
+      "sha256": "fc9a81c832af304421407c623b102a63bad3f6f25b5c9d6e2c1fdc29047fa8e5",
+      "symlink": null,
+      "bytes": 56
+    },
+    {
+      "path": "systems/whitepaperbuilder/README.md",
+      "sha256": "93c2a1205644d78065ff055c3f27bbce661d4b57d78fcaea27c7dfe2b8b4326a",
+      "symlink": null,
+      "bytes": 4541
+    },
+    {
+      "path": "systems/whitepaperbuilder/UPSTREAM.json",
+      "sha256": "39867d53e0ff6332dd027df5ff375ec1eb7d2e7887cbbfbbcb4541a655341a5d",
+      "symlink": null,
+      "bytes": 6049
+    },
+    {
+      "path": "systems/whitepaperbuilder/browser_checks.py",
+      "sha256": "cc67dc98b3205d77591fd7930ac10707eccc38b49cb6026da3462b664c30a013",
+      "symlink": null,
+      "bytes": 8673
+    },
+    {
+      "path": "systems/whitepaperbuilder/requirements-test.txt",
+      "sha256": "cfa2186c0470feac813f1ac67c71e54a53021ec949026946255874958d245e82",
+      "symlink": null,
+      "bytes": 19
+    },
+    {
+      "path": "systems/whitepaperbuilder/serve.sh",
+      "sha256": "ccbc6fe1c841fdf8e2c9552d3805c4574fc25800b6edcae75c7ac8e597522f39",
+      "symlink": null,
+      "bytes": 190
+    },
+    {
+      "path": "systems/whitepaperbuilder/setup.sh",
+      "sha256": "ee2bc053793f53c28b42549a97d24fcd214676ae2ff08419020e2562401b9e01",
+      "symlink": null,
+      "bytes": 456
+    },
+    {
+      "path": "systems/whitepaperbuilder/test_whitepaperbuilder.py",
+      "sha256": "840e2e631e45b402333f0175727408205835714c92e59bc1d39446f07ebc86e0",
+      "symlink": null,
+      "bytes": 1795
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/CHANGELOG.md",
+      "sha256": "e614672b50ee67c9fabb3bf1c6e6e5508a60c7d1368722fe90f298ca62197ea5",
+      "symlink": null,
+      "bytes": 1647
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/LICENSE",
+      "sha256": "0420367dd7a0b476621f476797a59c317d99bc5c7affe7b06b22f4c50018078d",
+      "symlink": null,
+      "bytes": 1072
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/NOTICE.md",
+      "sha256": "22bf50791b5d5ac7ea488f4dc6a1eac76310e595c99c17e1cee8ea0c255da469",
+      "symlink": null,
+      "bytes": 1665
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/README.md",
+      "sha256": "b1c0fbac08074507e3f7e60aa28b2ca6f7f7b6c3593f130b6ca93c80a6b1c6f1",
+      "symlink": null,
+      "bytes": 7316
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/Tests/run.js",
+      "sha256": "3b319cc5e6e06a32de64a71d3c801d9228177d78a7575da147559303516452a6",
+      "symlink": null,
+      "bytes": 12990
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/index.html",
+      "sha256": "f8c644ef6c87d40af79058da7604da8cac37c30b6d8a7ce4f56c4723b0432a8e",
+      "symlink": null,
+      "bytes": 1302986
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/build.py",
+      "sha256": "59c7cc00265c1fbc989c1fde954fb64b222f3dc28985ffd1aea394663db54166",
+      "symlink": null,
+      "bytes": 3130
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/core.js",
+      "sha256": "51b2273534803a1cb0cb088564a47be023d5d7bc13e48feabaf5d9b2a5b63ea0",
+      "symlink": null,
+      "bytes": 48190
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/page.html",
+      "sha256": "b0d03d20daeecb799e5c219ae873b367e17b701def9c3c9f067c11cc5d77aff1",
+      "symlink": null,
+      "bytes": 23667
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/paper.css",
+      "sha256": "abc854f568b2850e05678279c4ee31e334ce7d6087da4a38159187b948353b67",
+      "symlink": null,
+      "bytes": 17286
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/ui.js",
+      "sha256": "b4493415817ed3315b2abd5d27b2aaea54786384e3f19d3db932cb70acc3df6b",
+      "symlink": null,
+      "bytes": 35459
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/PAGEDJS-LICENSE.md",
+      "sha256": "f49bdde202ca66880e2d7cb7fd8103f43a917a60b61681484a66cf370e7647e0",
+      "symlink": null,
+      "bytes": 1076
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/OFL-ibm-plex-mono.txt",
+      "sha256": "23b0a9d0c6d3f140a0b77e483c5cfa6bba574325ef5cb189ed9f2fec4884533f",
+      "symlink": null,
+      "bytes": 5299
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/OFL-ibm-plex-sans-condensed.txt",
+      "sha256": "251faa58c24c53a1855818116292bf449d591937cf5143fafc23e0be5e26ddc6",
+      "symlink": null,
+      "bytes": 5416
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/OFL-ibm-plex-sans.txt",
+      "sha256": "d0283623ef57e722fd0eb688a8041589670c608ab780cd3612d06ba6f153d3fd",
+      "symlink": null,
+      "bytes": 4429
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/OFL-ibm-plex-serif.txt",
+      "sha256": "b9e9c867b084f43f2bf0284808dbf394b5a027200577c246f2ac4fe2711da416",
+      "symlink": null,
+      "bytes": 5312
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-mono-cyrillic-400-normal.woff2",
+      "sha256": "7635422bd10ddbbcb0e0caa1154b928298f5c8319b8c00b30978d4395f4783ce",
+      "symlink": null,
+      "bytes": 8356
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-mono-cyrillic-500-normal.woff2",
+      "sha256": "1d89462e86cb8e87e7e9d6f6635605bd7c3081baca6caaecee84916bf7b60edc",
+      "symlink": null,
+      "bytes": 8460
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-mono-cyrillic-700-normal.woff2",
+      "sha256": "104701bedfa06b56abba3e273f3ed74d7235d02c00ddc6ca942d65e2940fe6fe",
+      "symlink": null,
+      "bytes": 8676
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-mono-latin-400-normal.woff2",
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
+      "symlink": null,
+      "bytes": 14708
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-mono-latin-500-normal.woff2",
+      "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22",
+      "symlink": null,
+      "bytes": 14888
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-mono-latin-700-normal.woff2",
+      "sha256": "4f84d86cfd060f4ded334358ff8a4c81d4db2ed5addd568359d693f44a87765a",
+      "symlink": null,
+      "bytes": 14908
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-mono-latin-ext-400-normal.woff2",
+      "sha256": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb",
+      "symlink": null,
+      "bytes": 13348
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-mono-latin-ext-500-normal.woff2",
+      "sha256": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea",
+      "symlink": null,
+      "bytes": 13432
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-mono-latin-ext-700-normal.woff2",
+      "sha256": "5b9b81f54dd69635c7adcaacd4c4545a73fe4809c528e22734b238a83a74135f",
+      "symlink": null,
+      "bytes": 13380
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-sans-condensed-latin-500-normal.woff2",
+      "sha256": "e3b4fd97fd20bc70fda66d8d5f0745d8d6958068a024cb4724bbc1ffb6cbc183",
+      "symlink": null,
+      "bytes": 19952
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-sans-condensed-latin-600-normal.woff2",
+      "sha256": "3d72a0923c5830358b0a8e25b258aecadbecbf542b6ee9a25f387803e37d56b9",
+      "symlink": null,
+      "bytes": 19816
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-sans-condensed-latin-700-normal.woff2",
+      "sha256": "4768878c107d92c528a65bba206a87cdcf2c694514e75907fb91772cf8a388a5",
+      "symlink": null,
+      "bytes": 19352
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-sans-condensed-latin-ext-500-normal.woff2",
+      "sha256": "a429de5d03bbd4696453c21f38d2f2e3fb96f009903e88657fbe1136b97d004c",
+      "symlink": null,
+      "bytes": 15928
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-sans-condensed-latin-ext-600-normal.woff2",
+      "sha256": "014b6bf624d39ae76c07de342b45fab064e66321c9e0d78854750948c815ecf0",
+      "symlink": null,
+      "bytes": 16044
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-sans-condensed-latin-ext-700-normal.woff2",
+      "sha256": "5a87e23666978e2a09671acd300ac22abc5c607e555fa96124221ddb187e145d",
+      "symlink": null,
+      "bytes": 16092
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-sans-cyrillic-500-normal.woff2",
+      "sha256": "200be3a2a6b1789fb8824a4a74c7cccb7137e83fde6200ea78d8829f99d43546",
+      "symlink": null,
+      "bytes": 15000
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-sans-cyrillic-600-normal.woff2",
+      "sha256": "730becc6f005c18c31440f14d34677f2704a85e6afffd4bee6a64d5c95f45a55",
+      "symlink": null,
+      "bytes": 15040
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-sans-cyrillic-700-normal.woff2",
+      "sha256": "40540598b4c9eb2cd2562f1017e71f2697adb43e76f49079030dfd7f00b4b786",
+      "symlink": null,
+      "bytes": 14572
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-serif-cyrillic-400-italic.woff2",
+      "sha256": "8fcac7ce093cbed5b49219d6fdd36ec79e56c3e846d6884ecc4f6b6c96d1eaea",
+      "symlink": null,
+      "bytes": 14224
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-serif-cyrillic-400-normal.woff2",
+      "sha256": "1b706597c0169c04847649fe445491c73d674bdbfcf82b258d0ef1b59ade5f0d",
+      "symlink": null,
+      "bytes": 12280
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-serif-cyrillic-600-italic.woff2",
+      "sha256": "bd0be160ece46b44cb2a5c16cc9d66e7745d7016d0c6e1782c6135c8f569b99c",
+      "symlink": null,
+      "bytes": 14400
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-serif-cyrillic-600-normal.woff2",
+      "sha256": "19e51b19bd700917b553ab861cc5a4d48362e090e9a0f538625428312f6f1853",
+      "symlink": null,
+      "bytes": 12196
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-serif-latin-400-italic.woff2",
+      "sha256": "d3f861b1ca55e50ca94de4c1756cb0d67c73de615172adf6b5b2078d939c723a",
+      "symlink": null,
+      "bytes": 20900
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-serif-latin-400-normal.woff2",
+      "sha256": "cb2c5eee2c0a43ff30d2365407c7bc8b20e3bd90720a4a64102ba0b328022a02",
+      "symlink": null,
+      "bytes": 19580
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-serif-latin-600-italic.woff2",
+      "sha256": "e43f7c35d41c62cc622f73f72deb8d36688f2bdd1421cc68cf72fdf92cda99d8",
+      "symlink": null,
+      "bytes": 22016
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-serif-latin-600-normal.woff2",
+      "sha256": "e279e4f8baa0d4634d98868092f2198ae0dcd9e142c935822c385b9843352a9b",
+      "symlink": null,
+      "bytes": 20516
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-serif-latin-ext-400-italic.woff2",
+      "sha256": "68091cb647810f7ac24fb72fe7ac506ffc4769ef51435a87969345249fc7f035",
+      "symlink": null,
+      "bytes": 16296
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-serif-latin-ext-400-normal.woff2",
+      "sha256": "8b4077bd28d36819590924090252e811d4d0b2c78cb4bf1e4abe46d7428a2781",
+      "symlink": null,
+      "bytes": 15476
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-serif-latin-ext-600-italic.woff2",
+      "sha256": "4da786eeda09100a7c686082bb44d9aa1c2c427cbba46299ba54818aba8cd6d5",
+      "symlink": null,
+      "bytes": 16532
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ibm-plex-serif-latin-ext-600-normal.woff2",
+      "sha256": "3c56fe27718921294dd8573acbe5a2822d34dd55f5313437514e8bb33e00a6b7",
+      "symlink": null,
+      "bytes": 15560
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/fonts/ranges.json",
+      "sha256": "b0ba70f0f6026c90d74cb19be997d25c4cc8b70f1c1f91dc0ebfc23d9095fe38",
+      "symlink": null,
+      "bytes": 431
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/osint-core.js",
+      "sha256": "723a872799b2eb570a2b581aedf007ff8efcf9d3af233661836993bab3c3f503",
+      "symlink": null,
+      "bytes": 51433
+    },
+    {
+      "path": "systems/whitepaperbuilder/upstream/src/vendor/paged.min.js",
+      "sha256": "c4af9ac4a80f15e4abf53e11fdf34659dc4913f61b541652811cfa570f397211",
+      "symlink": null,
+      "bytes": 502617
+    },
+    {
+      "path": "systems/whitepaperbuilder/verification/browser-results.json",
+      "sha256": "71a8c93d0232bddec7f5aa7ad1d2477b448cbec70272b4150ca2c9c31526425e",
+      "symlink": null,
+      "bytes": 1128
+    },
+    {
+      "path": "systems/whitepaperbuilder/verification/latest.json",
+      "sha256": "c6e3327e9462e7ecf1c285e33b6071248e66e0940e9e0f90bc0edc4b15b89360",
+      "symlink": null,
+      "bytes": 1053
+    },
+    {
+      "path": "systems/whitepaperbuilder/verification/pdf-verification.json",
+      "sha256": "f6c94f1a43f6e503afeb11ee2dd51cccfa56760d0adb6b901b13366f90ed6872",
+      "symlink": null,
+      "bytes": 139
+    }
+  ],
+  "file_count": 64,
+  "bytes": 2541759
+}
