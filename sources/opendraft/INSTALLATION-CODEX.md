@@ -9,7 +9,7 @@ Installation and verification date: **2026-11-10**.
 
 The repository ships a Python research engine and an interactive **terminal CLI**, not a web application. The complete original engine, CLI screens, prompts, templates, documentation, examples and tests are retained. OpenPaper is a separate hosted product linked from upstream; its web UI is not included in this repository or this package.
 
-`codex-web/` is an explicitly added browser companion. It runs the installed original CLI and exporters as real subprocesses, stores runs and files on disk, and reports failures. It does not simulate AI output. No public deployment has been made.
+`codex-web/` is an explicitly added browser companion. It runs the installed original CLI and exporters as real subprocesses, stores runs and files on disk, and reports failures. It does not simulate AI output. A temporary protected Vercel preview was subsequently launched; see CLOUD-PREVIEW.md for its expiry and resume instructions.
 
 ## Start on your computer
 
@@ -25,9 +25,9 @@ First startup installs all upstream Python dependencies into `.venv`. Later star
 
 ### Native document exporters
 
-Python packages alone do not supply native PDF tools. Install **Pandoc** for LaTeX export and higher-quality Word output, plus **XeLaTeX** for the preferred PDF route. WeasyPrint is an alternative PDF renderer and needs its platform-specific native libraries.
+Python packages alone do not supply native PDF tools. Install **Pandoc** for LaTeX export and higher-quality Word output, plus **XeLaTeX** for the preferred PDF route. WeasyPrint is bundled as an optional renderer, but the current upstream auto-selection registry only selects Pandoc/XeLaTeX; install that route for original PDF exports.
 
-- Debian/Ubuntu: `sudo apt-get install pandoc texlive-xetex texlive-latex-extra texlive-fonts-recommended libpango-1.0-0 libpangoft2-1.0-0`
+- Debian/Ubuntu: `sudo apt-get install pandoc texlive-xetex texlive-latex-extra texlive-fonts-recommended lmodern libpango-1.0-0 libpangoft2-1.0-0`
 - macOS: install Pandoc and MacTeX (or a sufficiently complete TeX distribution). Follow WeasyPrint's macOS installation guide if using its fallback renderer.
 - Windows: install Pandoc and MiKTeX/XeLaTeX and put their executables on PATH. WeasyPrint's Windows native-library setup is separately documented at https://doc.courtbouillon.org/weasyprint/stable/first_steps.html . Restart the launcher after changing PATH.
 

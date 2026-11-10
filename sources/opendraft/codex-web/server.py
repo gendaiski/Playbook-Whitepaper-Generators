@@ -3,6 +3,7 @@ import argparse,base64,json,mimetypes,os,re,secrets,shutil,subprocess,sys,thread
 from pathlib import Path
 from http.server import ThreadingHTTPServer,BaseHTTPRequestHandler
 from urllib.parse import urlparse,unquote
+import cloud_access
 ROOT=Path(__file__).resolve().parents[1]
 DATA=Path(os.environ.get('OPENDRAFT_WORKSPACE',ROOT/'codex-web'/'workspace')).resolve()
 DATA.mkdir(parents=True,exist_ok=True)
@@ -28,7 +29,7 @@ def safe_file(rel):
  return p
 
 def status():
- c=config();return {'version':'1.8.1','provider':c.get('AI_PROVIDER','gemini'),'keys':{p:key_ready(p) for p in KEYS},'audio_key':bool(env().get('ELEVENLABS_API_KEY')),'original_interface':'Terminal CLI','companion':'Local browser control panel','python':sys.version.split()[0]}
+ c=config();return {'version':'1.8.1','remote':cloud_access.enabled(),'provider':c.get('AI_PROVIDER','gemini'),'keys':{p:key_ready(p) for p in KEYS},'audio_key':bool(env().get('ELEVENLABS_API_KEY')),'original_interface':'Terminal CLI','companion':'Browser control panel','python':sys.version.split()[0]}
 
 def redact(s):
  for k,v in env().items():
@@ -125,10 +126,16 @@ class Handler(BaseHTTPRequestHandler):
   b=json.dumps(data).encode() if kind=='application/json' else data
   self.send_response(status);self.send_header('Content-Type',kind);self.send_header('Content-Length',str(len(b)));self.send_header('Cache-Control','no-store');self.send_header('X-Content-Type-Options','nosniff');self.end_headers();self.wfile.write(b)
  def allowed(self):
-  return self.headers.get('Host','') in [f'127.0.0.1:{self.server.server_port}',f'localhost:{self.server.server_port}']
+  hosts=[f'127.0.0.1:{self.server.server_port}',f'localhost:{self.server.server_port}']
+  if cloud_access.enabled() and os.environ.get('OPENDRAFT_PUBLIC_HOST'):hosts.append(os.environ['OPENDRAFT_PUBLIC_HOST'])
+  return self.headers.get('Host','') in hosts
  def do_GET(self):
   if not self.allowed():return self.reply({'error':'Local access only'},403)
   path=unquote(urlparse(self.path).path)
+  if path=='/health':return self.reply({'ok':True})
+  if not cloud_access.authorized(self.headers):
+   if path=='/':return self.reply(cloud_access.ENTRY_HTML,kind='text/html; charset=utf-8')
+   return self.reply({'error':'Open your personal preview link first.'},403)
   try:
    if path=='/':return self.reply((ROOT/'codex-web/index.html').read_bytes().replace(b'__TOKEN__',TOKEN.encode()),kind='text/html; charset=utf-8')
    if path=='/api/status':return self.reply(status())
@@ -144,7 +151,9 @@ class Handler(BaseHTTPRequestHandler):
    return self.reply({'error':'Not found'},404)
   except (ValueError,FileNotFoundError):return self.reply({'error':'Not found'},404)
  def do_POST(self):
-  if not self.allowed() or self.headers.get('X-Local-Token')!=TOKEN:return self.reply({'error':'Invalid local request'},403)
+  if not self.allowed():return self.reply({'error':'Invalid request'},403)
+  if urlparse(self.path).path=='/api/unlock':return cloud_access.unlock(self)
+  if not cloud_access.authorized(self.headers) or self.headers.get('X-Local-Token')!=TOKEN:return self.reply({'error':'Invalid request'},403)
   try:
    n=int(self.headers.get('Content-Length','0'))
    if n<1 or n>30_000_000:raise ValueError('Request too large or empty')
@@ -181,8 +190,10 @@ class Handler(BaseHTTPRequestHandler):
 
 if __name__=='__main__':
  parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8877);args=parser.parse_args()
+ bind=os.environ.get('OPENDRAFT_BIND_HOST','127.0.0.1')
+ if bind!='127.0.0.1' and (not cloud_access.enabled() or not os.environ.get('OPENDRAFT_PUBLIC_HOST')):raise SystemExit('Remote binding requires a personal access token and an exact public hostname.')
  for f in (DATA/'jobs').glob('*/job.json'):
   d=json.loads(f.read_text())
   if d.get('status')=='running':d['status']='interrupted';save_job(f.parent,d)
  print(f'OpenDraft browser companion: http://127.0.0.1:{args.port}',flush=True)
- ThreadingHTTPServer(('127.0.0.1',args.port),Handler).serve_forever()
+ ThreadingHTTPServer((bind,args.port),Handler).serve_forever()

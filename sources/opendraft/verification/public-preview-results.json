@@ -1,0 +1,32 @@
+{
+  "result": "passed",
+  "export_bytes": {
+    "pdf": 9707,
+    "docx": 22922,
+    "tex": 4433
+  },
+  "jobs": 4,
+  "javascript_errors": [],
+  "checks": [
+    "CSRF protection",
+    "host protection",
+    "private settings blocked",
+    "path traversal blocked",
+    "original sample PDF",
+    "upload",
+    "PDF export",
+    "DOCX export",
+    "LaTeX export",
+    "original CLI help",
+    "dataset provider listing",
+    "saved history",
+    "mobile layout"
+  ],
+  "public_deployment_verified": true,
+  "host": "sb-whjcxg0lkwsb.vercel.run",
+  "hosted_on": "Vercel Sandbox",
+  "verified_date": "2026-11-10",
+  "session_expires_utc": "2026-11-10T19:51:50Z",
+  "access": "personal link; no ChatGPT sign-in",
+  "live_AI_generation_verified": false
+}
