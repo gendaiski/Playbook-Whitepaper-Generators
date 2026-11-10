@@ -1,0 +1,1 @@
+Preserve the original WhitePaperBuilder source and upstream notices. Work on a new codex/ branch and open a PR. Never automatically merge or deploy. Verify imported hashes with python3 tools/verify_integrity.py.
