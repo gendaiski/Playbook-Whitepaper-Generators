@@ -471,8 +471,8 @@
   },
   {
     "path": "sources/opendraft/codex-web/server.py",
-    "bytes": 11728,
-    "sha256": "09172eed4824d8ea243b912fefca1d5bb232ae8c316c01297928967d3b99775e"
+    "bytes": 12113,
+    "sha256": "5c003b0d686227d635a398ed40e68b0cc7108b022e510b66e43e8335e590428a"
   },
   {
     "path": "sources/opendraft/codex-web/test_browser.py",

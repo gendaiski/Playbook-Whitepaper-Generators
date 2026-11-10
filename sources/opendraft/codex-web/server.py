@@ -126,7 +126,9 @@ class Handler(BaseHTTPRequestHandler):
   b=json.dumps(data).encode() if kind=='application/json' else data
   self.send_response(status);self.send_header('Content-Type',kind);self.send_header('Content-Length',str(len(b)));self.send_header('Cache-Control','no-store');self.send_header('X-Content-Type-Options','nosniff');self.end_headers();self.wfile.write(b)
  def allowed(self):
-  return self.headers.get('Host','') in [f'127.0.0.1:{self.server.server_port}',f'localhost:{self.server.server_port}']
+  hosts=[f'127.0.0.1:{self.server.server_port}',f'localhost:{self.server.server_port}']
+  if cloud_access.enabled() and os.environ.get('OPENDRAFT_PUBLIC_HOST'):hosts.append(os.environ['OPENDRAFT_PUBLIC_HOST'])
+  return self.headers.get('Host','') in hosts
  def do_GET(self):
   if not self.allowed():return self.reply({'error':'Local access only'},403)
   path=unquote(urlparse(self.path).path)
@@ -188,8 +190,10 @@ class Handler(BaseHTTPRequestHandler):
 
 if __name__=='__main__':
  parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8877);args=parser.parse_args()
+ bind=os.environ.get('OPENDRAFT_BIND_HOST','127.0.0.1')
+ if bind!='127.0.0.1' and (not cloud_access.enabled() or not os.environ.get('OPENDRAFT_PUBLIC_HOST')):raise SystemExit('Remote binding requires a personal access token and an exact public hostname.')
  for f in (DATA/'jobs').glob('*/job.json'):
   d=json.loads(f.read_text())
   if d.get('status')=='running':d['status']='interrupted';save_job(f.parent,d)
  print(f'OpenDraft browser companion: http://127.0.0.1:{args.port}',flush=True)
- ThreadingHTTPServer(('127.0.0.1',args.port),Handler).serve_forever()
+ ThreadingHTTPServer((bind,args.port),Handler).serve_forever()
