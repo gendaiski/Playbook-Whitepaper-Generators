@@ -12,3 +12,8 @@
 - Source provenance: `provenance/`; byte manifest: `SOURCE-FILES.json`.
 
 WhitePaperBuilder remains publicly available at https://white-paper-builder.aelgendy673996.chatgpt.site/ (verified before this source migration). Its original licence and font notices are retained.
+
+
+## OpenDraft addition — 2026-11-10
+
+303 source, companion and verification files added under `sources/opendraft`; source MIT licence retained. Original terminal interface and full engine preserved. Browser companion is added, not upstream UI. See `provenance/opendraft.json` and `sources/opendraft/INSTALLATION-CODEX.md`. AI-dependent workflows require keys and are not claimed as live-tested. No deployment or merge performed.

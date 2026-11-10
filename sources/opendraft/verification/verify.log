@@ -1,0 +1,60 @@
+============================================================
+  OpenDraft - Installation Verification
+============================================================
+🐍 Python version: 3.12.14
+   ✅ Compatible (>= 3.10)
+
+📦 Dependencies:
+   ✅ anthropic
+   ✅ openai
+   ✅ google.genai
+   ✅ pybtex
+   ✅ citeproc
+   ✅ yaml
+   ✅ markdown
+   ✅ weasyprint
+   ✅ docx
+   ✅ requests
+   ✅ bs4
+   ✅ lxml
+   ✅ dotenv
+   ✅ rich
+
+🔑 API Keys (from environment):
+   ⚠️  No .env file found (using system environment)
+   ⚠️  Google Gemini (primary): Not set
+   ⚠️  Google Gemini (alias): Not set
+   ⚠️  Anthropic Claude: Not set
+   ⚠️  OpenAI GPT: Not set
+
+   ⚠️  WARNING: No API keys configured!
+   You need at least one LLM API key to generate theses.
+   See: https://github.com/federicodeponte/opendraft#setup
+
+📄 PDF Engines:
+   ✅ WeasyPrint (recommended): WeasyPrint version 69.0
+   ✅ Pandoc: pandoc 3.1.11.1
+   ❌ LibreOffice: Not available
+
+📁 Project Structure:
+   ✅ utils/ (62 Python files)
+   ✅ concurrency/ (2 Python files)
+   ✅ prompts/ (1 Python files)
+   ✅ examples/ (1 Python files)
+
+============================================================
+  SUMMARY
+============================================================
+✅ PASS     Python
+✅ PASS     Dependencies
+❌ FAIL     Api Keys
+✅ PASS     Pdf Engines
+✅ PASS     Structure
+============================================================
+
+⚠️  Installation has issues (see above)
+
+Troubleshooting:
+  - Install missing dependencies: pip install -e .
+  - Configure API keys in .env file
+  - See: https://github.com/federicodeponte/opendraft#troubleshooting
