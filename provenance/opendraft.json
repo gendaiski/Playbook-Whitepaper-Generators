@@ -1,0 +1,41 @@
+{
+  "project": "OpenDraft",
+  "source_repository": "https://github.com/federicodeponte/opendraft",
+  "source_commit": "39b21f74b3f52c34d5d771c508c8ad80f965d35f",
+  "upstream_version": "1.8.1",
+  "licence": "MIT",
+  "original_interface": "Terminal CLI",
+  "additional_interface": "Local browser companion",
+  "modified_upstream_files": [
+    ".gitignore",
+    "README.md",
+    "engine/opendraft/cli.py"
+  ],
+  "added_files": [
+    "INSTALLATION-CODEX.md",
+    "Start-Windows.cmd",
+    "start-local.sh",
+    "tests/test_codex_cli_provider_gate.py",
+    "codex-web/test_browser.py",
+    "codex-web/index.html",
+    "codex-web/export.py",
+    "codex-web/server.py",
+    "verification/test-summary.json",
+    "verification/installed-packages.txt",
+    "verification/export.tex",
+    "verification/export.docx",
+    "verification/export.pdf",
+    "verification/verify.log",
+    "verification/final-tests.xml",
+    "verification/browser-mobile.png",
+    "verification/browser-desktop.png",
+    "verification/browser-results.json"
+  ],
+  "source_file_count": 303,
+  "verified_date": "2026-11-10",
+  "runtime": "Python 3.12.14 Linux",
+  "live_model_calls_verified": false,
+  "deployment": "Local only; no public deployment",
+  "test_results": "sources/opendraft/verification/test-summary.json",
+  "browser_results": "sources/opendraft/verification/browser-results.json"
+}

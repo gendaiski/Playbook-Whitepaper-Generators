@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-10",
+  "upstream_sha": "39b21f74b3f52c34d5d771c508c8ad80f965d35f",
+  "passed": 538,
+  "skipped": 10,
+  "deselected": 6,
+  "skipped_tests": [
+    {
+      "test": "test_api_connection",
+      "reason": "No GOOGLE_API_KEY or GEMINI_API_KEY - skipping live API tests"
+    },
+    {
+      "test": "test_api_returns_academic_content",
+      "reason": "No GOOGLE_API_KEY or GEMINI_API_KEY - skipping live API tests"
+    },
+    {
+      "test": "test_checkpoint_preserves_llm_output",
+      "reason": "No GOOGLE_API_KEY or GEMINI_API_KEY - skipping live API tests"
+    },
+    {
+      "test": "test_multiple_llm_outputs_checkpoint",
+      "reason": "No GOOGLE_API_KEY or GEMINI_API_KEY - skipping live API tests"
+    },
+    {
+      "test": "test_quality_gate_scores_real_content",
+      "reason": "No GOOGLE_API_KEY or GEMINI_API_KEY - skipping live API tests"
+    },
+    {
+      "test": "test_research_to_checkpoint",
+      "reason": "No GOOGLE_API_KEY or GEMINI_API_KEY - skipping live API tests"
+    },
+    {
+      "test": "test_resume_continues_from_checkpoint",
+      "reason": "No GOOGLE_API_KEY or GEMINI_API_KEY - skipping live API tests"
+    },
+    {
+      "test": "test_llm_unicode_output",
+      "reason": "No GOOGLE_API_KEY or GEMINI_API_KEY - skipping live API tests"
+    },
+    {
+      "test": "test_llm_long_output",
+      "reason": "No GOOGLE_API_KEY or GEMINI_API_KEY - skipping live API tests"
+    },
+    {
+      "test": "test_full_mini_pipeline_with_interrupt_simulation",
+      "reason": "No GOOGLE_API_KEY or GEMINI_API_KEY - skipping live API tests"
+    }
+  ],
+  "provider_keys_configured": false,
+  "live_generation_verified": false,
+  "pdf_engine": "Pandoc/XeLaTeX",
+  "browser": "Chromium",
+  "python": "3.12.14"
+}
