@@ -1,0 +1,31 @@
+{
+  "result": "passed",
+  "export_bytes": {
+    "pdf": 9707,
+    "docx": 22847,
+    "tex": 4502
+  },
+  "jobs": 4,
+  "javascript_errors": [],
+  "checks": [
+    "no-key gate",
+    "CSRF protection",
+    "host protection",
+    "private settings blocked",
+    "path traversal blocked",
+    "original sample PDF",
+    "upload",
+    "PDF export",
+    "DOCX export",
+    "LaTeX export",
+    "original CLI help",
+    "dataset provider listing",
+    "saved history",
+    "mobile layout"
+  ],
+  "access_tests_passed": 7,
+  "personal_link_browser_unlock": "passed on localhost",
+  "unauthenticated_job_file_status_apis": "403",
+  "public_deployment_verified": false,
+  "public_tunnel_status": "pending explicit user approval"
+}

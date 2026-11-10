@@ -19,17 +19,34 @@ with sync_playwright() as pw:
     page = browser.new_page(viewport={'width': 1440, 'height': 1050})
     errors = []
     page.on('pageerror', lambda error: errors.append(str(error)))
-    page.goto(base)
+    request_api = page.request
+    access_file = os.environ.get('OPENDRAFT_TEST_ACCESS_FILE')
+    if access_file:
+        assert request_api.get(base + '/api/status').status == 403
+        assert request_api.get(base + '/api/jobs').status == 403
+        assert request_api.get(base + '/api/files').status == 403
+        assert request_api.post(base + '/api/unlock', data={'token': 'invalid'}).status == 403
+        page.goto(base + '/#access=' + Path(access_file).read_text().strip())
+        page.wait_for_url(base + '/')
+    else:
+        page.goto(base)
     page.wait_for_function("document.querySelector('#connection').textContent.includes('connected')")
+    if access_file:
+        # Chromium permits Secure cookies on localhost; APIRequestContext does not.
+        # Carry the actual browser session cookie for these localhost-only HTTP checks.
+        cookies = page.context.cookies()
+        cookie = next(c for c in cookies if c['name'] == 'od_session')
+        assert cookie['httpOnly'] and cookie['secure']
+        request_api = pw.request.new_context(extra_http_headers={'Cookie': 'od_session=' + cookie['value']})
     assert 'No gemini key' in page.locator('#keynote').inner_text()
     page.locator('[name=topic]').fill('A browser regression research topic')
     page.get_by_role('button', name='Start research', exact=True).click()
     page.wait_for_function("document.querySelector('#notice').textContent.includes('API key')")
-    assert page.request.get(base + '/api/jobs').json() == []
-    assert page.request.post(base + '/api/jobs', data={'mode': 'sample'}).status == 403
-    assert page.request.get(base + '/api/status', headers={'Host': 'attacker.invalid'}).status == 403
-    assert page.request.get(base + '/download/settings.local.json').status == 404
-    assert page.request.get(base + '/download/%2e%2e/%2e%2e/etc/passwd').status == 404
+    assert request_api.get(base + '/api/jobs').json() == []
+    assert request_api.post(base + '/api/jobs', data={'mode': 'sample'}).status == 403
+    assert request_api.get(base + '/api/status', headers={'Host': 'attacker.invalid'}).status == 403
+    assert request_api.get(base + '/download/settings.local.json').status == 404
+    assert request_api.get(base + '/download/%2e%2e/%2e%2e/etc/passwd').status == 404
 
     def wait_complete(mode):
         page.wait_for_function("mode => { const t=document.querySelector('#run-title').textContent; return t.startsWith(mode+' · ') && (t.includes('completed') || t.includes('failed')); }", arg=mode, timeout=120000)
@@ -38,7 +55,7 @@ with sync_playwright() as pw:
     page.get_by_role('button', name='Open original sample', exact=True).click()
     wait_complete('sample')
     sample = page.locator('#downloads a').filter(has_text='.pdf').get_attribute('href')
-    assert page.request.get(base + sample).body().startswith(b'%PDF')
+    assert request_api.get(base + sample).body().startswith(b'%PDF')
     page.get_by_role('button', name='Documents & exports', exact=True).click()
     page.locator('#upload').set_input_files({'name': 'regression.md', 'mimeType': 'text/markdown', 'buffer': b'# Export verification\n\nThis document tests the original export backend.\n\n## Results\n\n- PDF\n- Word\n- LaTeX\n'})
     page.wait_for_function("document.querySelector('#notice').textContent.includes('uploaded')")
@@ -48,7 +65,7 @@ with sync_playwright() as pw:
     files = {}
     for extension in ['pdf', 'docx', 'tex']:
         href = page.locator('#downloads a').filter(has_text='document.' + extension).get_attribute('href')
-        data = page.request.get(base + href).body()
+        data = request_api.get(base + href).body()
         assert len(data) > 100
         if extension == 'pdf': assert data.startswith(b'%PDF')
         if extension == 'docx': assert data.startswith(b'PK')
@@ -62,7 +79,7 @@ with sync_playwright() as pw:
     page.get_by_role('button', name='Fetch data', exact=True).click()
     wait_complete('data')
     assert 'World Bank' in page.locator('#log').inner_text()
-    assert len(page.request.get(base + '/api/jobs').json()) == 4
+    assert len(request_api.get(base + '/api/jobs').json()) == 4
     page.reload()
     page.get_by_role('button', name='Runs & original CLI output', exact=True).click()
     page.wait_for_function("document.querySelectorAll('.job').length===4")

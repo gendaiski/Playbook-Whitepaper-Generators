@@ -466,18 +466,18 @@
   },
   {
     "path": "sources/opendraft/codex-web/index.html",
-    "bytes": 15276,
-    "sha256": "5ec042aac3dbeed833aee60432cd6ce6f657ebeb0a7755a2fb5f0555890003bf"
+    "bytes": 15918,
+    "sha256": "fc776dce909d5d0c02d6ad6b841e45d4ae7592358e7ff7b0d4501b228bd4c82d"
   },
   {
     "path": "sources/opendraft/codex-web/server.py",
-    "bytes": 11244,
-    "sha256": "6053af463ee712eafb585759c21e4395a70a04d857d6ba7d0fdca3c7a35441c6"
+    "bytes": 11728,
+    "sha256": "09172eed4824d8ea243b912fefca1d5bb232ae8c316c01297928967d3b99775e"
   },
   {
     "path": "sources/opendraft/codex-web/test_browser.py",
-    "bytes": 5075,
-    "sha256": "9bc8ebcc2009521f686f1a663c6f8bdde118adf0a7fe54b62efb64f82c421277"
+    "bytes": 6072,
+    "sha256": "f8554c1f40684d0b02fed5890ec379cceb4d9309dd9ea3e845bd0481ce96578a"
   },
   {
     "path": "sources/opendraft/data/eval_topics.json",
@@ -1833,5 +1833,25 @@
     "path": "sources/opendraft/verification/verify.log",
     "bytes": 1682,
     "sha256": "0c97eb346bafd31135727298149021b7840d1f12f25575cff633b5c00e1040d7"
+  },
+  {
+    "path": "sources/opendraft/codex-web/cloud_access.py",
+    "bytes": 3065,
+    "sha256": "e46d8821c9ae822bdfe75c8c5f829b567fd0f8fe32f641d23221d1d3ffc01b60"
+  },
+  {
+    "path": "sources/opendraft/codex-web/test_cloud_access.py",
+    "bytes": 2450,
+    "sha256": "5a830df3f92f91d152a5d8f12766c714d0b6e5848a0ad57d1731cc2aafaa352d"
+  },
+  {
+    "path": "sources/opendraft/CLOUD-PREVIEW.md",
+    "bytes": 2657,
+    "sha256": "2c60633e2a272f66d1fd97c84a183b4ffe45abe98f17d2fcd58e8c35f74b06d5"
+  },
+  {
+    "path": "sources/opendraft/verification/cloud-preview-results.json",
+    "bytes": 717,
+    "sha256": "55818e3a2ad8688b410abbe094a9ee84c6d1c05f26d68df442ee0bdd276f42c3"
   }
 ]

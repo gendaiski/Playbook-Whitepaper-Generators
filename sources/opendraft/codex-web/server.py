@@ -3,6 +3,7 @@ import argparse,base64,json,mimetypes,os,re,secrets,shutil,subprocess,sys,thread
 from pathlib import Path
 from http.server import ThreadingHTTPServer,BaseHTTPRequestHandler
 from urllib.parse import urlparse,unquote
+import cloud_access
 ROOT=Path(__file__).resolve().parents[1]
 DATA=Path(os.environ.get('OPENDRAFT_WORKSPACE',ROOT/'codex-web'/'workspace')).resolve()
 DATA.mkdir(parents=True,exist_ok=True)
@@ -28,7 +29,7 @@ def safe_file(rel):
  return p
 
 def status():
- c=config();return {'version':'1.8.1','provider':c.get('AI_PROVIDER','gemini'),'keys':{p:key_ready(p) for p in KEYS},'audio_key':bool(env().get('ELEVENLABS_API_KEY')),'original_interface':'Terminal CLI','companion':'Local browser control panel','python':sys.version.split()[0]}
+ c=config();return {'version':'1.8.1','remote':cloud_access.enabled(),'provider':c.get('AI_PROVIDER','gemini'),'keys':{p:key_ready(p) for p in KEYS},'audio_key':bool(env().get('ELEVENLABS_API_KEY')),'original_interface':'Terminal CLI','companion':'Browser control panel','python':sys.version.split()[0]}
 
 def redact(s):
  for k,v in env().items():
@@ -129,6 +130,10 @@ class Handler(BaseHTTPRequestHandler):
  def do_GET(self):
   if not self.allowed():return self.reply({'error':'Local access only'},403)
   path=unquote(urlparse(self.path).path)
+  if path=='/health':return self.reply({'ok':True})
+  if not cloud_access.authorized(self.headers):
+   if path=='/':return self.reply(cloud_access.ENTRY_HTML,kind='text/html; charset=utf-8')
+   return self.reply({'error':'Open your personal preview link first.'},403)
   try:
    if path=='/':return self.reply((ROOT/'codex-web/index.html').read_bytes().replace(b'__TOKEN__',TOKEN.encode()),kind='text/html; charset=utf-8')
    if path=='/api/status':return self.reply(status())
@@ -144,7 +149,9 @@ class Handler(BaseHTTPRequestHandler):
    return self.reply({'error':'Not found'},404)
   except (ValueError,FileNotFoundError):return self.reply({'error':'Not found'},404)
  def do_POST(self):
-  if not self.allowed() or self.headers.get('X-Local-Token')!=TOKEN:return self.reply({'error':'Invalid local request'},403)
+  if not self.allowed():return self.reply({'error':'Invalid request'},403)
+  if urlparse(self.path).path=='/api/unlock':return cloud_access.unlock(self)
+  if not cloud_access.authorized(self.headers) or self.headers.get('X-Local-Token')!=TOKEN:return self.reply({'error':'Invalid request'},403)
   try:
    n=int(self.headers.get('Content-Length','0'))
    if n<1 or n>30_000_000:raise ValueError('Request too large or empty')

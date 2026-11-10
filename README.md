@@ -28,3 +28,5 @@ Run `Start-Windows.cmd` on Windows or `bash start-local.sh` on macOS/Linux from 
 Verified on Linux: 538 engine/provider tests passed, 10 skipped, six integration tests deselected; real PDF, DOCX and LaTeX generation/downloads, sample PDF, uploads, original CLI help, provider listing and browser history passed. No AI key is included: live drafting, summaries, revision and audio still require your provider configuration. Windows/macOS launchers are supplied but not OS-tested.
 
 MIT notices preserved. Provenance, exact upstream revision and the three changed upstream files are recorded in `provenance/opendraft.json`. This addition uses its own `codex/opendraft-install` branch and PR based on the existing import branch; nothing is merged automatically.
+
+Personal HTTPS access is prepared on `codex/opendraft-cloud-access`; public exposure awaits explicit Cloudflare approval. See [preview status and access design](sources/opendraft/CLOUD-PREVIEW.md). No public live URL is claimed yet.
