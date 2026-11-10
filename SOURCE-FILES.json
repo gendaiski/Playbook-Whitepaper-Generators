@@ -411,8 +411,8 @@
   },
   {
     "path": "sources/opendraft/INSTALLATION-CODEX.md",
-    "bytes": 7894,
-    "sha256": "97516cc4877ded4a7dbfc5c2e9a2ca4e86950372a2e7ac0909b9e19cea6bc0da"
+    "bytes": 8069,
+    "sha256": "3d1bd4401809d00190d369e0b2127c942b2db5cf3dadffec5304a613418c16d4"
   },
   {
     "path": "sources/opendraft/LICENSE",
@@ -1846,12 +1846,27 @@
   },
   {
     "path": "sources/opendraft/CLOUD-PREVIEW.md",
-    "bytes": 2657,
-    "sha256": "2c60633e2a272f66d1fd97c84a183b4ffe45abe98f17d2fcd58e8c35f74b06d5"
+    "bytes": 4529,
+    "sha256": "ebf210551fd2d652b94113d111b1d7656c32f4fa01fbb3bc8e06d5fdda714634"
   },
   {
     "path": "sources/opendraft/verification/cloud-preview-results.json",
     "bytes": 717,
     "sha256": "55818e3a2ad8688b410abbe094a9ee84c6d1c05f26d68df442ee0bdd276f42c3"
+  },
+  {
+    "path": "sources/opendraft/codex-web/start-cloud.py",
+    "bytes": 1090,
+    "sha256": "8e56b2d1d3b73bcab8b46e4838b614e9b9378f471edd049ce9b2dbe092f104ce"
+  },
+  {
+    "path": "sources/opendraft/verification/public-preview-results.json",
+    "bytes": 747,
+    "sha256": "ab29b1c1c86633f92a7e2274dbcbc1d5bf05b83c0df9b333bc1a4818610cda05"
+  },
+  {
+    "path": "sources/opendraft/verification/public-preview-desktop.png",
+    "bytes": 124615,
+    "sha256": "3275554f5cca7b4c44f005488e8e996bebeee807da8d283e393698907d606328"
   }
 ]
