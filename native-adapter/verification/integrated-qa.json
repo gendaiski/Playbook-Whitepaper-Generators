@@ -1,0 +1,46 @@
+{
+  "pages": 7,
+  "modeTabs": 1,
+  "iframes": 0,
+  "pdf": {
+    "title": true,
+    "body": true,
+    "hasChrome": false,
+    "info": [
+      "Pages:           7",
+      "Page size:       612 x 792 pts (letter)"
+    ],
+    "firstText": "WHITE PAPER SERIES\n\nNOVEMBER 2026\n\nWHITE PAPER\n\nWP-001\n\nCYBERSECURITY\nGEOPOLITICS\nMILITARY AFFAIRS\n\nWHITE PAPER NO. 001\n\nIntegrated Accord\npaper acceptance\n[Subtitle: the scope, the period, or the met",
+    "physicalPages": 7,
+    "matchesLogicalPages": true
+  },
+  "afterPrintParent": "native-generator-host",
+  "briefVisible": true,
+  "modeReturnPersistence": true,
+  "disposed": true,
+  "navigationPersistence": true,
+  "layout-1440-light": {
+    "overflow": false,
+    "theme": "light"
+  },
+  "layout-1440-dark": {
+    "overflow": false,
+    "theme": "dark"
+  },
+  "layout-820-light": {
+    "overflow": false,
+    "theme": "light"
+  },
+  "layout-820-dark": {
+    "overflow": false,
+    "theme": "dark"
+  },
+  "homepageCleanup": {
+    "hosts": 0,
+    "paginatorStyles": 0,
+    "moduleStyles": 0,
+    "homepage": true
+  },
+  "errors": [],
+  "externalRequests": []
+}
