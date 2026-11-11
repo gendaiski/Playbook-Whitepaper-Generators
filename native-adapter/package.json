@@ -1,0 +1,8 @@
+{
+  "name": "accord-whitepaper-native-adapter",
+  "private": true,
+  "version": "1.0.0",
+  "devDependencies": {
+    "postcss": "8.5.28"
+  }
+}

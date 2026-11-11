@@ -1,0 +1,63 @@
+{
+  "tabs": [
+    "Paper",
+    "Summary",
+    "Body",
+    "Visuals",
+    "Appendix",
+    "Sources",
+    "Back page"
+  ],
+  "projectTitle": "Accord native whitepaper acceptance",
+  "sourceCount": 1,
+  "timelineId": "timeline-1",
+  "visualKinds": [
+    "bar",
+    "stats",
+    "table",
+    "timeline"
+  ],
+  "renderedPages": 7,
+  "previewContainsSection": true,
+  "previewContainsCitation": true,
+  "exportedJSONBytes": 4058,
+  "exportedTitle": "Accord native whitepaper acceptance",
+  "reopenJSON": true,
+  "remountPersistence": true,
+  "printInvoked": true,
+  "pdf": {
+    "bytes": 91790,
+    "containsTitle": true,
+    "containsBody": true,
+    "containsCitation": true,
+    "containsParentChrome": false,
+    "info": [
+      "Pages:           7",
+      "Page size:       612 x 792 pts (letter)"
+    ]
+  },
+  "layout-1440-light": {
+    "overflow": false,
+    "theme": "light"
+  },
+  "layout-1440-dark": {
+    "overflow": false,
+    "theme": "dark"
+  },
+  "layout-820-light": {
+    "overflow": false,
+    "theme": "light"
+  },
+  "layout-820-dark": {
+    "overflow": false,
+    "theme": "dark"
+  },
+  "afterDispose": {
+    "nativeHosts": 0,
+    "paginatorStyles": 0,
+    "parentChrome": true
+  },
+  "iframes": 0,
+  "errors": [],
+  "externalRequests": []
+}
